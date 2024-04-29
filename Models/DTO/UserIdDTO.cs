@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace tasksprintbe.Models.DTO
 {
-    public class PasswordDTO
+     public class UserIdDTO
     {
-        public string Salt { get; set; }
-        public string Hash { get; set; }
+        public int UserId { get; set; }
+        public string PublisherName { get; set; }
     }
 }

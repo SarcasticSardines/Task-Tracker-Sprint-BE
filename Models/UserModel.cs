@@ -12,11 +12,10 @@ namespace tasksprintbe.Models
         public string? Salt { get; set; }
         public string? Hash { get; set; }
 
-public UserModel()
-{
-    
-}
+        public UserModel()
+        {
 
+        }
 
     }
 }
