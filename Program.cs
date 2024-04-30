@@ -19,7 +19,7 @@ builder.Services.AddCors(options => options.AddPolicy("TaskPolicy",
 builder => {
     builder.WithOrigins("")
     .AllowAnyHeader()
-    .AllowAnyMethod
+    .AllowAnyMethod();
 }));
 
 

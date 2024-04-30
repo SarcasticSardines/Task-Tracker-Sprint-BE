@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sai4s\\Downloads\\Task-Tracker-Sprint-BE-main (1)\\Task-Tracker-Sprint-BE-main\\Task-Tracker-Sprint-BE\\tasksprintbe.csproj": {}
+    "C:\\Users\\hulkf\\Documents\\CODING\\4thlevel\\week2\\tasksprintbe\\tasksprintbe.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sai4s\\Downloads\\Task-Tracker-Sprint-BE-main (1)\\Task-Tracker-Sprint-BE-main\\Task-Tracker-Sprint-BE\\tasksprintbe.csproj": {
+    "C:\\Users\\hulkf\\Documents\\CODING\\4thlevel\\week2\\tasksprintbe\\tasksprintbe.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sai4s\\Downloads\\Task-Tracker-Sprint-BE-main (1)\\Task-Tracker-Sprint-BE-main\\Task-Tracker-Sprint-BE\\tasksprintbe.csproj",
+        "projectUniqueName": "C:\\Users\\hulkf\\Documents\\CODING\\4thlevel\\week2\\tasksprintbe\\tasksprintbe.csproj",
         "projectName": "tasksprintbe",
-        "projectPath": "C:\\Users\\sai4s\\Downloads\\Task-Tracker-Sprint-BE-main (1)\\Task-Tracker-Sprint-BE-main\\Task-Tracker-Sprint-BE\\tasksprintbe.csproj",
-        "packagesPath": "C:\\Users\\sai4s\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sai4s\\Downloads\\Task-Tracker-Sprint-BE-main (1)\\Task-Tracker-Sprint-BE-main\\Task-Tracker-Sprint-BE\\obj\\",
+        "projectPath": "C:\\Users\\hulkf\\Documents\\CODING\\4thlevel\\week2\\tasksprintbe\\tasksprintbe.csproj",
+        "packagesPath": "C:\\Users\\hulkf\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\hulkf\\Documents\\CODING\\4thlevel\\week2\\tasksprintbe\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\sai4s\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\hulkf\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
