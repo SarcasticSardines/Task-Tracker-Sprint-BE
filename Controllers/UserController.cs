@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using tasksprintbe.Models.DTO;
 using tasksprintbe.Services;
 
 namespace tasksprintbe.Controllers
@@ -12,5 +13,22 @@ namespace tasksprintbe.Controllers
     public class UserController : ControllerBase
     {
         private readonly UserService _data;
+
+        public UserController(UserService data){
+            _data = data;
+        }
+
+        [HttpPost]
+        [Route("Login")]
+        public IActionResult Login([FromBody] LoginDTO User){
+            return _data.Login(User);
+        }
+
+        [HttpPost]
+        [Route("AddUser")]
+
+        public bool AddUser(CreateAccDTO UserToAdd){
+            return _data.AddUser(UserToAdd);
+        }
     }
 }
