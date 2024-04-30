@@ -9,6 +9,8 @@ builder.Services.AddScoped<PasswordService>();
 
 builder.Services.AddScoped<TaskService>();
 
+builder.Services.AddScoped<CommentService>();
+
 builder.Services.AddScoped<UserService>();
 
 var connectionString = builder.Configuration.GetConnectionString("MyTaskString");
@@ -17,7 +19,7 @@ builder.Services.AddDbContext<DataContext>(Options => Options.UseSqlServer(conne
 
 builder.Services.AddCors(options => options.AddPolicy("TaskPolicy",
 builder => {
-    builder.WithOrigins("")
+    builder.WithOrigins("http://localhost:5072")
     .AllowAnyHeader()
     .AllowAnyMethod();
 }));
@@ -37,7 +39,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+// app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
