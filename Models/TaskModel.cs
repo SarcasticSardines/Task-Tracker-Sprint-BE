@@ -19,11 +19,13 @@ namespace tasksprintbe.Models
 
         public string? AssignedTo { get; set; }
 
-        public string? DateUpdated { get; set; }
+        public string? Status { get; set; }
+
+        public string? Priority { get; set; }
 
         public bool IsDeleted { get; set; }
 
-        TaskModel()
+        public TaskModel()
         {
 
         }
