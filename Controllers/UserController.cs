@@ -30,5 +30,12 @@ namespace tasksprintbe.Controllers
         public bool AddUser(CreateAccDTO UserToAdd){
             return _data.AddUser(UserToAdd);
         }
+
+        [HttpDelete]
+        [Route("DeleteUser/{userToDelete}")]
+
+        public bool DeleteUser(string userToDelete){
+            return _data.DeleteUser(userToDelete);
+        }
     }
 }
