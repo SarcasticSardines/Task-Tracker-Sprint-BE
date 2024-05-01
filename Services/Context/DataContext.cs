@@ -13,6 +13,7 @@ namespace tasksprintbe.Services.Context
         public DbSet<TaskModel> TaskInfo { get; set; }
         public DbSet<CommentModel> CommentInfo { get; set; }
         public DbSet<BoardModel> BoardInfo { get; set; }
+        public DbSet<MemberModel> MemberInfo { get; set; }
 
         public DataContext(DbContextOptions options) : base(options) { }
 
