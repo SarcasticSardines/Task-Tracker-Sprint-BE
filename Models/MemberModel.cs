@@ -10,5 +10,10 @@ namespace tasksprintbe.Models
         public int ID { get; set; }
         public int UserID { get; set; }
         public int BoardID { get; set; }
+
+        internal bool Any()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

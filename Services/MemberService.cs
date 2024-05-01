@@ -17,7 +17,7 @@ namespace tasksprintbe.Services
             _context = context;
         }
 
-        public IActionResult UserClubs(int userId){
+        public IActionResult UserBoards(int userId){
             var boardIds = _context.MemberInfo
             .Where(bm => bm.UserID == userId)
             .Select(bm => bm.BoardID)
@@ -25,7 +25,7 @@ namespace tasksprintbe.Services
             return Ok(boardIds);
         }
 
-        public IActionResult GetBoardMembers(int boardId){
+        public IActionResult BoardMembers(int boardId){
             var memberIds = _context.MemberInfo
             .Where(board => board.BoardID == boardId)
             .Select(boardM => boardM.UserID)
@@ -76,15 +76,40 @@ namespace tasksprintbe.Services
             }
         }
 
-        // public async Task<IActionResult> RemoveMemberFromBoard(int userId, int boardId){
-        //     try{
-        //         var userBoard = await _context.MemberInfo.FirstOrDefaultAsync(board => board.UserID ==userId && board.BoardID==boardId);
+        public async Task<IActionResult> RemoveMemberFromBoard(int userId, int boardId){
+            try{
+                var userBoard = await _context.MemberInfo.FirstOrDefaultAsync(board => board.UserID ==userId && board.BoardID==boardId);
 
-        //         if(userBoard == null){
-        //             return NotFound("User is ")
-        //         }
-        //     }
-        // }
+                if(userBoard == null){
+                    return NotFound("User is not on the board");
+                }
+
+                _context.MemberInfo.Remove(userBoard);
+                await _context.SaveChangesAsync();
+
+                return Ok("Member successfully removed from board");
+            }
+            catch(Exception ex){
+                return StatusCode(500,$"Error removing from board, {ex.Message}");
+            }
+        }
+
+        public async Task<IActionResult> RemoveBoardFromUser(int userId, int boardId){
+            try{
+                var userBoard = await _context.MemberInfo.FirstOrDefaultAsync(board => board.UserID==userId && board.BoardID == boardId);
+            if(userBoard == null || !userBoard.Any()){
+                return NotFound("User is not in board");
+            }
+            _context.MemberInfo.RemoveRange(userBoard);
+            await _context.SaveChangesAsync();
+
+            return Ok("Board removed from user account successfully!");
+            }
+            catch(Exception ex){
+                return StatusCode(500,$"Error removing board from user acc, {ex.Message}");
+            }
+
+        }
         
     }
 }
