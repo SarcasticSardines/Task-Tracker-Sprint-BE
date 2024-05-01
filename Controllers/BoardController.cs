@@ -62,6 +62,14 @@ namespace tasksprintbe.Controllers
             return _data.GetBoardById(id);
         }
 
+        [HttpGet]
+        [Route("GenerateRandomInviteCode")]
+        public ActionResult<string> GenerateRandomInviteCode()
+        {
+            var inviteCode = _data.GenerateRandomInviteCode();
+            return Ok(inviteCode);
+        }
+
         [HttpPut]
         [Route("UpdateBoard")]
         public bool UpdateBoard(BoardModel boardUpdate)
