@@ -13,6 +13,8 @@ builder.Services.AddScoped<CommentService>();
 
 builder.Services.AddScoped<UserService>();
 
+builder.Services.AddScoped<BoardService>();
+
 var connectionString = builder.Configuration.GetConnectionString("MyTaskString");
 
 builder.Services.AddDbContext<DataContext>(Options => Options.UseSqlServer(connectionString));
