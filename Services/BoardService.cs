@@ -16,20 +16,20 @@ namespace tasksprintbe.Services
             _context = context;
         }
 
-        public bool AddComment(BoardModel newTaskItem)
+        public bool AddBoard(BoardModel newTaskItem)
         {
             _context.Add(newTaskItem);
             return _context.SaveChanges() != 0;
         }
 
-        public IEnumerable<BoardModel> GetAllItems()
+        public IEnumerable<BoardModel> GetAllBoards()
         {
             return _context.BoardInfo;
         }
 
-        public IEnumerable<BoardModel> GetBoardByBoardName(int id)
+        public IEnumerable<BoardModel> GetBoardByBoardName(string name)
         {
-            return _context.BoardInfo.Where(item => item.ID == id);
+            return _context.BoardInfo.Where(item => item.BoardName == name);
         }
 
         public IEnumerable<BoardModel> GetBoardByInviteCode(string code)
@@ -56,12 +56,12 @@ namespace tasksprintbe.Services
             return _context.BoardInfo.Where(item => item.MemberList == members);
         }
 
-        public BoardModel GetBoardItemById(int id)
+        public BoardModel GetBoardById(int id)
         {
             return _context.BoardInfo.SingleOrDefault(item => item.ID == id);
         }
 
-        public bool UpdateBoardItem(BoardModel boardUpdate)
+        public bool UpdateBoard(BoardModel boardUpdate)
         {
             _context.Update<BoardModel>(boardUpdate);
             return _context.SaveChanges() != 0;

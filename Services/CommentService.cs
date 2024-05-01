@@ -28,11 +28,6 @@ namespace tasksprintbe.Services
             return _context.CommentInfo;
         }
 
-        public IEnumerable<CommentModel> GetCommentsById(int id)
-        {
-            return _context.CommentInfo.Where(item => item.ID == id);
-        }
-
         public IEnumerable<CommentModel> GetCommentsByUsername(string username)
         {
             return _context.CommentInfo.Where(item => item.Username == username);
