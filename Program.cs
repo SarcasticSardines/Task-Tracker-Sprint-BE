@@ -15,6 +15,8 @@ builder.Services.AddScoped<UserService>();
 
 builder.Services.AddScoped<BoardService>();
 
+builder.Services.AddScoped<MemberService>();
+
 var connectionString = builder.Configuration.GetConnectionString("MyTaskString");
 
 builder.Services.AddDbContext<DataContext>(Options => Options.UseSqlServer(connectionString));
