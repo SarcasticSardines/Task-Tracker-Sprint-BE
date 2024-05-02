@@ -11,6 +11,8 @@ namespace tasksprintbe.Models
 
         public string? BoardName { get; set; }
 
+        public string? Username { get; set; }
+
         public string? InviteCode { get; set; }
 
         public string? MemberList { get; set; }

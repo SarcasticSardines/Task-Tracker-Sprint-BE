@@ -38,6 +38,11 @@ namespace tasksprintbe.Services
             return _context.BoardInfo.Where(item => item.BoardName == name);
         }
 
+        public IEnumerable<BoardModel> GetBoardByUsername(string username)
+        {
+            return _context.BoardInfo.Where(item => item.Username == username);
+        }
+
         public IEnumerable<BoardModel> GetBoardByInviteCode(string code)
         {
             if (code.Length != 6)
@@ -99,7 +104,7 @@ namespace tasksprintbe.Services
             {
                 inviteCodeBuilder.Append(numbers[_random.Next(numbers.Length)]);
             }
-            
+
             return inviteCodeBuilder.ToString();
         }
     }

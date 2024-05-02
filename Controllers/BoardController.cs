@@ -42,6 +42,13 @@ namespace tasksprintbe.Controllers
         }
 
         [HttpGet]
+        [Route("GetBoardByUsername")]
+        public IEnumerable<BoardModel> GetBoardByUsername(string username)
+        {
+            return _data.GetBoardByUsername(username);
+        }
+
+        [HttpGet]
         [Route("GetBoardByInviteCode")]
         public IEnumerable<BoardModel> GetAllBoards(string code)
         {
