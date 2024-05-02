@@ -28,9 +28,9 @@ namespace tasksprintbe.Services
             return _context.TaskInfo;
         }
 
-        public IEnumerable<TaskModel> GetItemsByUserId(int userId)
+        public IEnumerable<TaskModel> GetItemsByUsername(string username)
         {
-            return _context.TaskInfo.Where(item => item.UserId == userId);
+            return _context.TaskInfo.Where(item => item.Username == username);
         }
 
 

@@ -21,7 +21,7 @@ namespace tasksprintbe.Controllers
         }
 
         [HttpPost]
-        [Route("AddComment")]
+        [Route("AddBoard")]
         public bool AddBoard(BoardModel newBoard)
         {
             return _data.AddBoard(newBoard);

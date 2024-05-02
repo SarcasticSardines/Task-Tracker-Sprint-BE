@@ -34,10 +34,10 @@ namespace tasksprintbe.Controllers
         }
 
         [HttpGet]
-        [Route("GetItemsByUserId")]
-        public IEnumerable<TaskModel> GetItemsByUserId(int userId)
+        [Route("GetItemsByUsername")]
+        public IEnumerable<TaskModel> GetItemsByUsername(string username)
         {
-            return _data.GetItemsByUserId(userId);
+            return _data.GetItemsByUsername(username);
         }
 
         [HttpGet]
