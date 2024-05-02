@@ -114,6 +114,11 @@ namespace tasksprintbe.Services
             return result;
         }
         
+        public IEnumerable<UserModel> GetUserByDate(string date)
+        {
+            return _context.UserInfo.Where(user => user.JoinedDate == date);
+        }
+        
 
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using tasksprintbe.Models;
 using tasksprintbe.Models.DTO;
 using tasksprintbe.Services;
 
@@ -36,6 +37,13 @@ namespace tasksprintbe.Controllers
 
         public bool DeleteUser(string userToDelete){
             return _data.DeleteUser(userToDelete);
+        }
+
+        [HttpGet]
+        [Route("GetUserByDate")]
+
+        public IEnumerable<UserModel> GetUserByDate(string date){
+            return _data.GetUserByDate(date);
         }
     }
 }
