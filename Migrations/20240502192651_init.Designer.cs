@@ -11,7 +11,7 @@ using tasksprintbe.Services.Context;
 namespace tasksprintbe.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240502165607_init")]
+    [Migration("20240502192651_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -42,6 +42,9 @@ namespace tasksprintbe.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("MemberList")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Username")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
@@ -128,8 +131,8 @@ namespace tasksprintbe.Migrations
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
+                    b.Property<string>("Username")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
 
@@ -150,8 +153,8 @@ namespace tasksprintbe.Migrations
                     b.Property<string>("Hash")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("JoinedDate")
-                        .HasColumnType("int");
+                    b.Property<string>("JoinedDate")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ProfilePicture")
                         .HasColumnType("nvarchar(max)");

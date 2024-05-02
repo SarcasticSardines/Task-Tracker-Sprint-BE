@@ -41,6 +41,9 @@ namespace tasksprintbe.Migrations
                     b.Property<string>("MemberList")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Username")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("ID");
 
                     b.ToTable("BoardInfo");
@@ -125,8 +128,8 @@ namespace tasksprintbe.Migrations
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
+                    b.Property<string>("Username")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
 
@@ -147,8 +150,8 @@ namespace tasksprintbe.Migrations
                     b.Property<string>("Hash")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("JoinedDate")
-                        .HasColumnType("int");
+                    b.Property<string>("JoinedDate")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ProfilePicture")
                         .HasColumnType("nvarchar(max)");
